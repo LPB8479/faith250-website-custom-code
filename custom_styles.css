@@ -359,61 +359,80 @@ article:has(.ns-metadata):has(.clusters) .sqs-block-accordion .accordion-item__d
     Texts Menu Page
 ============= */
 @media (min-width: 768px) and (max-width: 1023px) {
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) {
     grid-auto-rows: calc(var(--container-width) * var(--row-height-scaling-factor));
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(1) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(1),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(1) {
     grid-area: 1/3/8/13;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(1):last-child {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(1):last-child,
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(1):last-child {
     grid-area: 1/9/8/19;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(2) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(2),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(2) {
     grid-area: 1/-13/8/-3;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(3) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(3),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(3) {
     grid-area: 10/3/17/13;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(3):last-child {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(3):last-child,
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(3):last-child {
     grid-area: 10/9/17/19;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(4) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(4),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(4) {
     grid-area: 10/-13/17/-3;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(5) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(5),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(5) {
     grid-area: 19/3/26/13;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(5):last-child {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(5):last-child,
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(5):last-child {
     grid-area: 19/9/26/19;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(6) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(6),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(6) {
     grid-area: 19/-13/26/-3;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(7) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(7),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(7) {
     grid-area: 28/3/35/13;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(7):last-child {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(7):last-child,
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(7):last-child {
     grid-area: 28/9/35/19;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(8) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(8),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(8) {
     grid-area: 28/-13/35/-3;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(9) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(9),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(9) {
     grid-area: 37/3/44/13;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(9):last-child {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(9):last-child,
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(9):last-child {
     grid-area: 37/9/44/19;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(10) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(10),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(10) {
     grid-area: 37/-13/44/-3;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(11) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(11),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(11) {
     grid-area: 46/3/53/13;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(11):last-child {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(11):last-child,
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(11):last-child {
     grid-area: 46/9/53/19;
   }
-  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(12) {
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-new-colossus"] img):has(a[href="/america-the-beautiful"] img) .fe-block:nth-child(12),
+  article:has(.ns-metadata):has(.texts-page) .fluid-engine:has(a[href="/the-gettysburg-address"] img):has(a[href="/the-ones-who-walk-away-from-omelas"] img) .fe-block:nth-child(12) {
     grid-area: 46/-13/53/-3;
   }
 }
