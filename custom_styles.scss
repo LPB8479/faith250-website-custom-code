@@ -1,0 +1,27 @@
+// Helpers Styles
+@import "scss-sub-files/helpers/_mixins.scss";
+@import "scss-sub-files/helpers/_variables.scss";
+
+:root {
+  @include grid-setup;
+}
+
+// Component Styles
+@import "scss-sub-files/components/navigation";
+@import "scss-sub-files/components/_typography.scss";
+@import "scss-sub-files/components/_buttons.scss";
+@import "scss-sub-files/components/_forms.scss";
+@import "scss-sub-files/components/_stamps.scss";
+@import "scss-sub-files/components/_metadata.scss";
+
+// Page Styles
+@import "scss-sub-files/pages/_homepage.scss";
+@import "scss-sub-files/pages/_local-clusters.scss";
+@import "scss-sub-files/pages/_texts-menu.scss";
+@import "scss-sub-files/pages/_texts.scss";
+@import "scss-sub-files/pages/_resources.scss";
+@import "scss-sub-files/pages/_virtual-events.scss";
+
+// Layout Styles
+@import "scss-sub-files/layout/_page-layouts.scss";
+@import "scss-sub-files/layout/_footer.scss";

@@ -1,0 +1,14 @@
+
+/* =============
+    Stamps
+============= */
+
+#{$metadata}:has(.stamp) .fe-block:has(img[src$="stamp.webp"]) {
+    width: col-span(7);
+    height: auto;
+    aspect-ratio: auto 607 / 277;
+
+    @include min(lg) {
+      width: col-span(4)
+    }
+  }

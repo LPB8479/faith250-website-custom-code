@@ -1,0 +1,14 @@
+
+/* =============
+    Footer
+============= */
+
+footer .fe-block.fe-block:nth-child(5) p {
+  @include min(md) {
+    text-align: right !important;
+  }
+
+  @include max(md) {
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,111 @@
+
+/* =============
+    Virtual Events
+============= */
+
+#{$metadata}:has(.virtual-events) section.user-items-list-section li {
+  padding: 0 0 2% 0 !important;
+
+  @include min(md) {
+    display: flex !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+  }
+
+  .list-item-media {
+    margin-bottom: 0 !important;
+
+    @include min(md) {
+      .list-item-media-inner {
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    @include btwn(md, lg) {
+      min-width: 50%;
+    }
+
+    @include min(lg) {
+      min-width: 35%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+  }
+
+  .list-item-content {
+    @include min(md) {
+      padding: 2%;
+      margin-left: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @include min(lg) {
+      width: 100%;
+    }
+
+    .list-item-content__text-wrapper {
+      margin: 24px 16px 0 16px !important;
+
+      @include min(md) {
+        margin: 0 !important;
+      }
+
+      h2 {
+        @include fluid-text-from-var("--normal-text-size-value");
+
+        @include min(md) {
+          text-align-last: left;
+          margin: 0;
+          max-width: none !important;
+        }
+      }
+
+      .list-item-content__description {
+        margin-top: 1rem !important;
+
+        @include min(md) {
+          text-align: left;
+          max-width: none !important;
+          margin-top: 6px !important;
+        }
+
+        p {
+          @include fluid-text-from-var("--normal-text-size-value");
+
+          &:first-child {
+            font-weight: bold;
+          }
+
+          @include min(md) {
+            margin: 0.5rem 0 !important;
+          }
+        }
+      }
+    }
+
+    .list-item-content__button-container {
+      margin: 8% 0 0 0 !important;
+      max-width: 100% !important;
+
+      @include min(md) {
+        margin: 0 !important;
+        max-width: none !important;
+        text-align: left !important;
+      }
+
+      a {
+        background-color: var(--red) !important;
+        @include fluid-text-from-var("--primary-button-font-font-size-value");
+        padding-left: 48px !important;
+        padding-right: 48px !important;
+      }
+    }
+  }
+}

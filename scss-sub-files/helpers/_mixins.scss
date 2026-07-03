@@ -1,0 +1,70 @@
+@use "sass:map";
+$metadata: "article:has(.ns-metadata)";
+
+@mixin fluid-text-from-var($var-name) {
+  font-size: calc((var(#{$var-name}) - 1) * 1.2vw + 1rem) !important;
+}
+
+@mixin min($min) {
+  @media (min-width: map.get($breakpoints, $min)) {
+    @content;
+  }
+}
+
+@mixin max($max) {
+  @media (max-width: (map.get($breakpoints, $max) - 1)) {
+    @content;
+  }
+}
+
+@mixin btwn($min, $max) {
+  @media (min-width: map.get($breakpoints, $min)) and (max-width: (map.get($breakpoints, $max) - 1)) {
+    @content;
+  }
+}
+
+@mixin grid-setup {
+  @include max(md) {
+    --grid-column-count: #{$column-count-max};
+  }
+
+  @include min(md) {
+    --grid-column-count: #{$column-count-min};
+  }
+}
+
+@function col-span($count) {
+  // ((100vw - ((gutter + gap) * 2) - ((column-count - 1) * gap )) / column-count )
+  $single-col: "((100vw - ((var(--grid-gutter) + 11px) * 2) - ((var(--grid-column-count) - 1) * 11px)) / var(--grid-column-count))";
+
+  // (single-col * count) + (gap * (count - 1))
+  @return calc((#{$single-col} * #{$count}) + ((#{$count} - 1) * 11px));
+}
+
+@function calculate-grid-margin($column-count) {
+  // gutter + gap + (column-width + gap)
+  @return calc(var(--grid-gutter) + 11px + #{col-span($column-count)} + 11px);
+}
+
+@mixin grid-flex-margins($sm, $lg) {
+  @include max(md) {
+    margin: 0 calculate-grid-margin($sm);
+  }
+
+  @include min(md) {
+    margin: 0 calculate-grid-margin($lg);
+  }
+}
+
+@mixin force-flex ($sm, $lg) {
+  @include grid-flex-margins($sm, $lg);
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  align-items: center;
+
+  .fe-block:has(.sqs-block-button) a {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+}

@@ -1,0 +1,90 @@
+/* =============
+    Buttons
+============= */
+
+main .fe-block:has(.sqs-button-block) {
+    a.sqs-button-element--primary {
+
+        &,
+        button[type="submit"] {
+            position: relative;
+            padding-right: 36px !important;
+            padding-left: 36px !important;
+        }
+
+        &::after,
+        .form-submit-button-label::after {
+            content: "\f105";
+            font-family: "FontAwesome";
+            font-weight: 900;
+            font-size: 20px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translate(6px, -50%);
+            opacity: 0;
+            transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.2s ease;
+        }
+
+        &:hover::after,
+        button[type="submit"]:hover .form-submit-button-label::after {
+            transform: translate(0, -50%);
+            opacity: 1;
+        }
+    }
+
+    &:has(a[href*="13AUeKXbuIrxVVXvsaE6jj9sB1oNh4RQossdESDSDQbs"]) {
+        @include btwn(md, lg) {
+            grid-column-start: 9;
+            grid-column-end: 21;
+        }
+    }
+}
+
+/* IMAGE LINK HOVER */
+a>img[src$=".png"] {
+    filter: brightness(100%);
+    transition: 0.2s;
+}
+
+a:hover>img[src$=".png"] {
+    filter: brightness(60%);
+}
+
+/* FOOTER BUTTONS */
+.footer-button-container {
+    width: 100%;
+    display: flex;
+    gap: 11px;
+    justify-content: center;
+
+    @include min(md) {
+        justify-content: flex-end;
+    }
+
+    .button {
+        border: 3px solid var(--darkRed);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 16px;
+        transition-timing-function: ease;
+        transition-duration: 0.9s;
+        transition-delay: 0.544444s;
+        transition: .1s background-color linear, .1s color linear;
+
+        svg {
+            fill: var(--darkRed);
+        }
+
+        &:hover {
+            background-color: var(--darkRed);
+
+            svg {
+                fill: var(--tan);
+            }
+        }
+    }
+}

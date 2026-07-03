@@ -1,0 +1,60 @@
+/* =============
+    Page Layouts
+============= */
+
+#{$metadata} {
+  &:has(.one-row) section:has(p) .fluid-engine {
+    grid-template-rows: 1fr;
+  }
+
+  @include max(md) {
+
+    &:has(.two-rows),
+    &:has(.three-rows) {
+      section:has(p) .fluid-engine {
+        display: flex;
+        flex-direction: column;
+        gap: 48px;
+        margin: 0 var(--grid-gutter);
+        align-items: center;
+
+        .fe-block:has(.sqs-block-video) {
+          display: contents;
+        }
+      }
+    }
+  }
+
+  @include btwn(md, lg) {
+    &:has(.hero-img) section:first-child .fe-block:only-child:has(.sqs-block-image) {
+      grid-column: 7/21;
+    }
+
+    &:has(.one-row),
+    &:has(.two-rows),
+    &:has(.three-rows),
+    &:has(.resources) {
+      section:nth-child(n+3) .fe-block:has(p) {
+        grid-column: 6/22;
+      }
+    }
+
+    &:has(.two-rows) section:has(p) .fluid-engine {
+      grid-template-rows: repeat(2, auto);
+    }
+
+    &:has(.three-rows) section:has(p) .fluid-engine {
+      grid-template-rows: repeat(3, auto);
+    }
+
+    &:not(:has(.resources)) .fe-block:has(.sqs-block-button a.sqs-button-element--primary) {
+      grid-column: 1/26;
+    }
+  }
+}
+
+/* SECTION SPACING */
+.page-section.vertical-alignment--middle:not(.content-collection):not(.gallery-section):not(.user-items-list-section):not(.editmode-changing-rowcount).section-height--small>.content-wrapper {
+  padding-top: max(36px, 3.3vmax);
+  padding-bottom: max(36px, 3.3vmax);
+}

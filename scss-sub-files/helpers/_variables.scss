@@ -1,0 +1,21 @@
+/* =============
+    Variables
+============= */
+// Grid Setup
+$column-count-max: 8;
+$column-count-min: 24;
+
+// Media Queries
+$breakpoints: (
+  sm: 430px,
+  md: 768px,
+  lg: 1024px,
+  xl: 2120px
+);
+
+:root {
+  --red: #a82258;
+  --darkRed: #41242F;
+  --tan: #EBEDD7;
+  --heading-5-size-value: 1.3;
+}

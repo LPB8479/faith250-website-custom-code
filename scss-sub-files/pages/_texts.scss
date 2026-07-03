@@ -1,0 +1,14 @@
+
+/* =============
+    Texts Pages
+============= */
+
+#{$metadata}:has(.texts) section:nth-child(3) .fluid-engine {
+  @include max(lg) {
+    @include force-flex(0, 6);
+
+    .fe-block:has(h4) {
+      width: 100%;
+    }
+  }
+}

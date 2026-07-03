@@ -1,0 +1,19 @@
+/* =============
+    Metadata
+============= */
+
+.fe-block:has(.ns-metadata) {
+  background-color: red;
+}
+
+section:has(.ns-metadata) {
+  display: none;
+}
+
+.sqs-edit-mode,
+.sqs-edit-mode-active,
+.sqs-is-page-editing {
+  section:has(.ns-metadata) {
+    display: flex;
+  }
+}

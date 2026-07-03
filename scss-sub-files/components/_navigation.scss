@@ -1,0 +1,18 @@
+/* =============
+    Navigation
+============= */
+header #the-texts,
+[data-folder="/the-texts-1"] .header-menu-nav-folder-content {
+    hr {
+        background-color: var(--darkRed);
+        border: none;
+        height: 2px;
+    }
+
+    .header-nav-folder-item:nth-child(n+5),
+    .header-menu-nav-item:nth-child(n+6) {
+        a {
+            opacity: 0.75;
+        }
+    }
+}

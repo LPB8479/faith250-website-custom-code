@@ -1,0 +1,17 @@
+
+/* =============
+    Forms
+============= */
+
+@include btwn(md, lg) {
+  .fe-block:has(form) {
+    grid-column-start: 6;
+    grid-column-end: 22;
+  }
+}
+
+.sqs-search-ui-text-input {
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 8px;
+}

@@ -1,0 +1,45 @@
+/* =============
+    Local Clusters Page
+============= */
+#{$metadata}:has(.clusters) {
+  .sqs-block-accordion .accordion-item__description {
+    max-width: unset !important;
+
+    p {
+      &:has(a) {
+        font-family: 'loos-compressed-5pv9kb';
+        font-style: normal;
+        font-weight: 500;
+        font-size: calc((var(--heading-5-size-value) - 1) * calc(.012 * min(100vh, 900px)) + 1rem);
+        line-height: calc(var(--heading-font-line-height) * (1 + (1 - var(--heading-5-size-value))/25));
+        margin-bottom: 0 !important;
+
+        @include min(md) {
+          @include fluid-text-from-var("--heading-5-size-value");
+        }
+
+        @include min(xl) {
+          font-size: calc(var(--heading-5-size-value) * 1rem)
+        }
+
+        &:not(:first-of-type) {
+          margin-top: 2rem !important;
+        }
+
+        strong {
+          font-weight: inherit;
+        }
+      }
+
+      &:not(:has(a)) {
+        margin-top: 0.25rem !important;
+      }
+    }
+
+    @include max(md) {
+      .fe-block:has(.sqs-block-accordion) {
+        min-width: 75%;
+      }
+    }
+  }
+}

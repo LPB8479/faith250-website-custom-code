@@ -1,0 +1,39 @@
+
+/* =============
+    Resources Pages
+============= */
+#{$metadata}:has(.resources) {
+  section:nth-child(3) .fluid-engine {
+    grid-template-rows: 1fr;
+  }
+
+  section:has(p):nth-child(2n+5) .fluid-engine {
+    @include force-flex(0, 7);
+
+    .fe-block:has(.sqs-block-button a.sqs-button-element--primary) {
+      width: 100%;
+
+      @include btwn(md, lg) {
+        width: col-span(12);
+      }
+
+      @include min(lg) {
+        width: col-span(8);
+      }
+    }
+  }
+
+  section:has(img[src*="divider"]) {
+    @include max(lg) {
+      .fe-block:has(img[src*="desktop"]) {
+        display: none;
+      }
+    }
+
+    @include min(lg) {
+      .fe-block:has(img[src*="mobile"]) {
+        display: none;
+      }
+    }
+  }
+}
