@@ -58,3 +58,6 @@
   padding-top: max(36px, 3.3vmax);
   padding-bottom: max(36px, 3.3vmax);
 }
+.page-section.section-height--small:not(.content-collection):not(.gallery-section):not(.user-items-list-section) {
+  min-height: 0 !important;
+}

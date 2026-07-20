@@ -1,0 +1,22 @@
+/* =============
+    Media Page
+============= */
+
+#{$metadata} {
+    &:has(.media) section:last-child {
+        @include max(md) {
+            .fluid-engine {
+                display: flex;
+                flex-direction: column;
+                gap: 48px;
+                align-items: center;
+            }
+        }
+
+        .fluid-engine .fe-block {
+            width: col-span(6);
+            height: auto;
+            aspect-ratio: auto 3375 / 2250;
+        }
+    }
+}

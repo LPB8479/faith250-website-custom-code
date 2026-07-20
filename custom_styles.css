@@ -356,6 +356,23 @@ article:has(.ns-metadata):has(.clusters) .sqs-block-accordion .accordion-item__d
 }
 
 /* =============
+    Media Page
+============= */
+@media (max-width: 767px) {
+  article:has(.ns-metadata):has(.media) section:last-child .fluid-engine {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+  }
+}
+article:has(.ns-metadata):has(.media) section:last-child .fluid-engine .fe-block {
+  width: calc(((100vw - ((var(--grid-gutter) + 11px) * 2) - ((var(--grid-column-count) - 1) * 11px)) / var(--grid-column-count)) * 6 + (6 - 1) * 11px);
+  height: auto;
+  aspect-ratio: auto 3375/2250;
+}
+
+/* =============
     Texts Menu Page
 ============= */
 @media (min-width: 768px) and (max-width: 1023px) {
@@ -665,6 +682,10 @@ article:has(.ns-metadata):has(.one-row) section:has(p) .fluid-engine {
 .page-section.vertical-alignment--middle:not(.content-collection):not(.gallery-section):not(.user-items-list-section):not(.editmode-changing-rowcount).section-height--small > .content-wrapper {
   padding-top: max(36px, 3.3vmax);
   padding-bottom: max(36px, 3.3vmax);
+}
+
+.page-section.section-height--small:not(.content-collection):not(.gallery-section):not(.user-items-list-section) {
+  min-height: 0 !important;
 }
 
 /* =============
