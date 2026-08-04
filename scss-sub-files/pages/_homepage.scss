@@ -151,8 +151,16 @@
     }
   }
 
-  &>a {
+  &>a:first-of-type {
     color: var(--red) !important;
     text-decoration: underline !important;
+  }
+
+  &>#subscribe-button {
+    width: fit-content;
+    text-decoration: none !important;
+    background-color: var(--red);
+    color: var(--tan);
+    align-self: center;
   }
 }
