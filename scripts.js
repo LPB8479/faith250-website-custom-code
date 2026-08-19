@@ -60,6 +60,7 @@ function substackEmbed() {
                 filteredItems = (data.items || []).filter(item =>
                     item.enclosure.type.includes("image") &&
                     !item.enclosure.link.includes("798d06d1-5eae-41bc-b275-3db65abe2b4c_256x256") &&
+                    !item.enclosure.link.includes("9daa1d33-4cbe-4b7d-b459-1c00b28b8fdd_1742x1742") &&
                     !clusterWords.some(word => item.title.endsWith(word))
                 );
             }
