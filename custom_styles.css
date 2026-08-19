@@ -167,9 +167,9 @@ section.page-section:has(.ns-metadata) {
   display: none;
 }
 
-.sqs-edit-mode section:has(.ns-metadata),
-.sqs-edit-mode-active section:has(.ns-metadata),
-.sqs-is-page-editing section:has(.ns-metadata) {
+.sqs-edit-mode section.page-section:has(.ns-metadata),
+.sqs-edit-mode-active section.page-section:has(.ns-metadata),
+.sqs-is-page-editing section.page-section:has(.ns-metadata) {
   display: flex;
 }
 

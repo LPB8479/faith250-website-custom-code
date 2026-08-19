@@ -13,7 +13,7 @@ section.page-section:has(.ns-metadata) {
 .sqs-edit-mode,
 .sqs-edit-mode-active,
 .sqs-is-page-editing {
-  section:has(.ns-metadata) {
+  section.page-section:has(.ns-metadata) {
     display: flex;
   }
 }
