@@ -1,11 +1,3 @@
-// Import custom styles
-function importCSS() {
-    var link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://cdn.jsdelivr.net/gh/LPB8479/faith250-website-custom-code@main/custom_styles.css?v=' + Date.now();
-    document.head.appendChild(link);
-};
-
 // Add divider line in nav texts menu
 function navDivider() {
     if (document.getElementById('the-texts')) {
@@ -153,7 +145,6 @@ function substackEmbed() {
 }
 
 function runAll() {
-    importCSS();
     navDivider();
     substackEmbed();
 }
