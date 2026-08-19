@@ -6,7 +6,7 @@
   background-color: red;
 }
 
-section:has(.ns-metadata) {
+section.page-section:has(.ns-metadata) {
   display: none;
 }
 

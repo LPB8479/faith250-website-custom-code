@@ -163,7 +163,7 @@ article:has(.ns-metadata):has(.stamp) .fe-block:has(img[src$="stamp.webp"]) {
   background-color: red;
 }
 
-section:has(.ns-metadata) {
+section.page-section:has(.ns-metadata) {
   display: none;
 }
 
