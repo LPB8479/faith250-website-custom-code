@@ -3,11 +3,11 @@
     Resources Pages
 ============= */
 #{$metadata}:has(.resources) {
-  section:nth-child(3) .fluid-engine {
+  section.page-section:nth-child(3) .fluid-engine {
     grid-template-rows: 1fr;
   }
 
-  section:has(p):nth-child(2n+5) .fluid-engine {
+  section.page-section:has(p):nth-child(2n+5) .fluid-engine {
     @include force-flex(0, 7);
 
     .fe-block:has(.sqs-block-button a.sqs-button-element--primary) {
@@ -23,7 +23,7 @@
     }
   }
 
-  section:has(img[src*="divider"]) {
+  section.page-section:has(img[src*="divider"]) {
     @include max(lg) {
       .fe-block:has(img[src*="desktop"]) {
         display: none;

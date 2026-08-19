@@ -3,7 +3,7 @@
 ============= */
 
 #{$metadata} {
-    &:has(.media) section:last-child {
+    &:has(.media) section.page-section:last-child {
         @include max(md) {
             .fluid-engine {
                 display: flex;

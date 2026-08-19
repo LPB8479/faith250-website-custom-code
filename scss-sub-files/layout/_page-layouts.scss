@@ -3,7 +3,7 @@
 ============= */
 
 #{$metadata} {
-  &:has(.one-row) section:has(p) .fluid-engine {
+  &:has(.one-row) section.page-section:has(p) .fluid-engine {
     grid-template-rows: 1fr;
   }
 
@@ -11,7 +11,7 @@
 
     &:has(.two-rows),
     &:has(.three-rows) {
-      section:has(p) .fluid-engine {
+      section.page-section:has(p) .fluid-engine {
         display: flex;
         flex-direction: column;
         gap: 48px;
@@ -26,7 +26,7 @@
   }
 
   @include btwn(md, lg) {
-    &:has(.hero-img) section:first-child .fe-block:only-child:has(.sqs-block-image) {
+    &:has(.hero-img) section.page-section:first-child .fe-block:only-child:has(.sqs-block-image) {
       grid-column: 7/21;
     }
 
@@ -34,16 +34,16 @@
     &:has(.two-rows),
     &:has(.three-rows),
     &:has(.resources) {
-      section:nth-child(n+3) .fe-block:has(p) {
+      section.page-section:nth-child(n+3) .fe-block:has(p) {
         grid-column: 6/22;
       }
     }
 
-    &:has(.two-rows) section:has(p) .fluid-engine {
+    &:has(.two-rows) section.page-section:has(p) .fluid-engine {
       grid-template-rows: repeat(2, auto);
     }
 
-    &:has(.three-rows) section:has(p) .fluid-engine {
+    &:has(.three-rows) section.page-section:has(p) .fluid-engine {
       grid-template-rows: repeat(3, auto);
     }
 
