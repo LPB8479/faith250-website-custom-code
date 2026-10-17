@@ -1,18 +1,17 @@
 // Add divider line in nav texts menu
-function navDivider() {
+function navDivider(itemNumber) {
     if (document.getElementById('the-texts')) {
-        const doc4 = document.getElementById('the-texts').children[3];
-        const doc4Mobile = document.querySelector('header [data-folder="/the-texts-1"] .header-menu-nav-folder-content').children[4];
-
+        const targetDesktop = document.getElementById('the-texts').children[itemNumber - 1];
         const hr = document.createElement('hr');
         hr.style.width = '100%';
-        doc4.after(hr);
+        targetDesktop.after(hr);
 
+        const targetMobile = document.querySelector('header [data-folder="/the-texts-1"] .header-menu-nav-folder-content').children[itemNumber];
         const hrMobile = document.createElement('hr');
         const hrContMobile = document.createElement('div');
         hrContMobile.classList.add('container', 'header-menu-nav-item', 'hr-container');
         hrContMobile.append(hrMobile);
-        doc4Mobile.after(hrContMobile);
+        targetMobile.after(hrContMobile);
     }
 }
 
@@ -191,7 +190,8 @@ async function substackEmbed() {
 }
 
 function runAll() {
-    navDivider();
+    navDivider(8);
+    navDivider(4);
     substackEmbed();
 }
 
