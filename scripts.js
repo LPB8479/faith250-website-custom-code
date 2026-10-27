@@ -17,8 +17,7 @@ function navDivider(itemNumber) {
 
 //Script for Substack embed
 const postCount = 3;
-const primaryFeedUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https%3A%2F%2Fwww.joinfaith250.org%2Ffeed';
-const secondaryFeedUrl = 'https://toptalproxy.littleplasticbrick.workers.dev/'
+const feedUrl = 'https://faith250-feed.littleplasticbrick.workers.dev/'
 const clusterWords = ["Cluster", "Association", "Institute", "Coalition", "Clergy and Faith Leaders"]
 
 async function substackEmbed() {
@@ -41,12 +40,6 @@ async function substackEmbed() {
             .replace(/'/g, '&#039;');
     }
 
-    function extractImageFromHTML(htmlContent) {
-        if (!htmlContent) return null;
-        const match = htmlContent.match(/<a[^>]+href=["']([^"']+)["']/i);
-        return match ? match[1] : null;
-    }
-
     function buildCard(link, imageUrl, title, subtitle = 'No Subtitle Provided') {
         const safeTitle = escapeHTML(decodeHTMLEntities(title));
         const safeSubtitle = escapeHTML(decodeHTMLEntities(subtitle));
@@ -54,22 +47,22 @@ async function substackEmbed() {
         const safeImg = escapeHTML(imageUrl);
 
         return `
-    <div class="post">
-      <a href="${safeLink}" class="link-with-image" target="_blank" rel="noopener noreferrer">
-        <div class="post-image-wrapper">
-          ${safeImg ? `<img src="${safeImg}" alt="${safeTitle}" class="featured-image">` : ''}
-        </div>
-        <div class="post-meta-data">
-          <h3>${safeTitle}</h3>
-          <p><strong>${safeSubtitle}</strong></p>
-        </div>
-      </a>
-    </div>
-  `;
+            <div class="post">
+              <a href="${safeLink}" class="link-with-image" target="_blank" rel="noopener noreferrer">
+                <div class="post-image-wrapper">
+                  ${safeImg ? `<img src="${safeImg}" alt="${safeTitle}" class="featured-image">` : ''}
+                </div>
+                <div class="post-meta-data">
+                  <h3>${safeTitle}</h3>
+                  <p><strong>${safeSubtitle}</strong></p>
+                </div>
+              </a>
+            </div>
+        `;
     }
 
-    // Consolidated filtering logic for both feeds
-    function filterPosts(items, isSecondary = false) {
+    // Consolidated filtering logic using enclosureUrl
+    function filterPosts(items) {
         if (!Array.isArray(items) || items.length === 0) return [];
 
         const PREFERRED_DIMENSIONS = ["8000x2500"];
@@ -81,13 +74,6 @@ async function substackEmbed() {
 
         const SUBSTACK_CDN_PREFIX = "https://substackcdn.com/image/fetch/";
 
-        const getImgUrl = (item) => {
-            if (isSecondary) {
-                return extractImageFromHTML(item.content_html);
-            }
-            return item.enclosure?.link;
-        };
-
         // 1. Process items sequentially to preserve feed order
         const validCandidates = items
             .filter(item => {
@@ -95,8 +81,8 @@ async function substackEmbed() {
                 return !clusterWords.some(word => title.endsWith(word));
             })
             .map(item => {
-                const imgUrl = getImgUrl(item);
-                const isImage = isSecondary ? Boolean(imgUrl) : item.enclosure?.type?.includes("image");
+                const imgUrl = item.enclosureUrl || '';
+                const isImage = Boolean(imgUrl);
                 return { ...item, _imgUrl: imgUrl, _isImage: isImage };
             })
             .filter(item => {
@@ -117,12 +103,10 @@ async function substackEmbed() {
             PREFERRED_DIMENSIONS.some(dim => item._imgUrl.includes(dim))
         );
 
-        // If preferred matches alone hit the target count, take them in their original feed order
         if (preferredMatches.length >= postCount) {
             return preferredMatches.slice(0, postCount);
         }
 
-        // Otherwise, fallback to the top valid items in original feed order to fill postCount
         return validCandidates.slice(0, postCount);
     }
 
@@ -130,12 +114,12 @@ async function substackEmbed() {
     const statusEl = document.getElementById('posts-status');
     const containerEl = document.getElementById('latest-posts');
 
-    function renderPosts(items, isSecondary = false) {
+    function renderPosts(items) {
         const html = items.map(item => buildCard(
-            isSecondary ? item.url : item.link,
+            item.url,
             item._imgUrl,
             item.title,
-            isSecondary ? item.summary : item.description
+            item.description
         )).join('');
 
         if (statusEl) statusEl.style.display = 'none';
@@ -153,38 +137,20 @@ async function substackEmbed() {
         if (containerEl) containerEl.style.display = 'none';
     }
 
-
-    // 1. Try Primary Feed
     try {
-        const response = await fetch(primaryFeedUrl);
+        const response = await fetch(feedUrl);
         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const data = await response.json();
-        const posts = filterPosts(data.items, false);
-
-        if (posts.length === 0) throw new Error('No valid posts from primary feed');
-
-        renderPosts(posts, false);
-        return;
-    } catch (err) {
-        console.warn('Primary API failed, trying backup...', err.message);
-    }
-
-    // 2. Try Secondary Feed
-    try {
-        const response = await fetch(secondaryFeedUrl);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
-        const data = await response.json();
-        const posts = filterPosts(data.items, true);
+        const posts = filterPosts(data.items);
 
         if (posts.length > 0) {
-            renderPosts(posts, true);
+            renderPosts(posts);
         } else {
             renderError('No posts available.');
         }
     } catch (err) {
-        console.error('Secondary feed error:', err);
+        console.error('Feed error:', err);
         renderError('Failed to load the latest posts.');
     }
 }
