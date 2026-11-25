@@ -65,7 +65,7 @@ async function substackEmbed() {
     function filterPosts(items) {
         if (!Array.isArray(items) || items.length === 0) return [];
 
-        const PREFERRED_DIMENSIONS = ["8000x2500"];
+        const PREFERRED_DIMENSIONS = ["8000x2500", "1920x600"];
         const BLOCKED_DIMENSIONS = ["1080x1350"];
         const BLOCKED_IMAGES = [
             "798d06d1-5eae-41bc-b275-3db65abe2b4c_256x256",
